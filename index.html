@@ -42,22 +42,22 @@
   <body>
   <div class="divim">
     <input type="number" class="sayilar" id="sayi1" placeholder="ilk sayı?">
-    <button onclick="Onayla()" id="butonum" class="butonum">Onayla✓</button>
+    <button onclick="onayla()" id="butonum" class="butonum">Onayla✓</button>
     <p id="paragraf1" style="color: azure; text-align: center;"></p>
   </div> <br>
     <div class="divim2">
     <input type="number" class="sayilar" id="sayi2" placeholder="ikinci sayı?">
-    <button onclick="Onayla2()" id="butonum2" class="butonum">Onayla✓</button>
+    <button onclick="onaylamak()" id="butonum2" class="butonum">Onayla✓</button>
     <p id="paragraf2" style="color: azure; text-align: center;"></p>
     </div>
     <script>
-      function Onayla(){
+      function onayla(){
         const x = document.getElementById("butonum");
         x.remove();
       const sayi1 = document.getElementById("sayi1").value;
         document.getElementById("paragraf1").innerHTML= "İlk sayı: " + sayi1;
       }
-      function Onayla2(){
+      function onaylamak(){
         const y = document.getElementById("butonum2");
         y.remove();
       const sayi2 = document.getElementById("sayi2").value;
