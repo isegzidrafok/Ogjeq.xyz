@@ -24,7 +24,7 @@
       }
       .divim2{
         background-color: black;
-        widht: 90%;
+        width: 90%;
         height: 25%;
         position: fixed;
         left: 1%;
@@ -51,8 +51,7 @@
     <input type="number" class="sayilar" id="sayi2" placeholder="ikinci sayı?">
     <button onclick="onaylamak()" id="butonum2" class="butonum">Onayla✓</button>
     <p id="paragraf2" style="color: azure; text-align: center;"></p>
-    </div> <br>
-    <img src="index.html">
+    </div>
     <script>
       function onayla(){
         const x = document.getElementById("butonum");
@@ -64,7 +63,7 @@
         const y = document.getElementById("butonum2");
         y.remove();
       const sayi2 = document.getElementById("sayi2").value;
-        document.getElementById("paragraf2").innerHTML= "İkinci sayı: " sayi2;
+        document.getElementById("paragraf2").innerHTML= "İkinci sayı: " + sayi2;
       }
     </script>
   </body>
