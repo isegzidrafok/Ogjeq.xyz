@@ -38,12 +38,24 @@
     <button onclick="Onayla()" id="butonum" class="butonum">Onayla✓</button>
     <p id="paragraf1" style="color: azure; text-align: center;"></p>
   </div>
+    <div class="divim">
+    <input type="number" class="sayilar" id="sayi2" placeholder="ikinci sayı?">
+    <button onclick="Onayla2()" id="butonum2" class="butonum">Onayla✓</button>
+    <p id="paragraf2" style="color: azure; text-align: center;"></p>
+    </div>
+    <a href="sonuc.html">Sonuç için tıkla</a>
     <script>
       function Onayla(){
         const x = document.getElementById("butonum");
         x.remove();
       const sayi1 = document.getElementById("sayi1").value;
         document.getElementById("paragraf1").innerHTML= "İlk sayı: " + sayi1;
+      }
+      function Onayla2(){
+        const y = document.getElementById("butonum2");
+        y.remove();
+      const sayi2 = document.getElementById("sayi2").value;
+        document.getElementById("paragraf2").innerHTML= "İkinci sayı: " sayi2;
       }
     </script>
   </body>
