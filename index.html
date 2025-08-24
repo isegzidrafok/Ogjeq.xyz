@@ -35,13 +35,15 @@
   <body>
   <div class="divim">
     <input type="number" class="sayilar" id="sayi1" placeholder="ilk sayı?">
-    <button onclick="Onayla()" style="butonum">Onayla✓</button>
+    <button onclick="Onayla()" id="butonum" class="butonum">Onayla✓</button>
     <p id="paragraf1" style="color: azure; text-align: center;"></p>
   </div>
     <script>
       function Onayla(){
-      const sayi1 = document.getElementById("sayi1").value
-        document.getElementById("paragraf1").innerHTML= "İlk sayı: " + sayi1
+        const x = document.getElementById("butonum");
+        x.remove();
+      const sayi1 = document.getElementById("sayi1").value;
+        document.getElementById("paragraf1").innerHTML= "İlk sayı: " + sayi1;
       }
     </script>
   </body>
