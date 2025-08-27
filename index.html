@@ -59,21 +59,52 @@
         margin-left: 1%;
         width: 24%;
         height: 100%;
+        font-size: 30px;
+        border: 3px solid azure;
+        border-radius: 8px;
+        background-color: black;
+        color: azure; 
+        display: inline-block;
       }
       .cikarmaIslemi{
         margin-left: 1%;
         width: 24%;
         height: 100%;
+        font-size: 30px;
+        border: 3px solid azure;
+        border-radius: 8px;
+        background-color: black;
+        color: azure; 
+        display: inline-block;
       }
       .bolmeIslemi{
         margin-left: 1%;
         width: 24%;
         height: 100%;
+        font-size: 30px;
+        border: 3px solid azure;
+        border-radius: 8px;
+        background-color: black;
+        color: azure;
+        display: inline-block;
       }
       .carpmaIslemi{
         margin-left: 1%;
         width: 24%;
         height: 100%;
+        font-size: 30px;
+        border: 1px solid azure;
+        border-radius: 8px;
+        background-color: black;
+        color: azure;
+        display: inline-block;
+      }
+      .islem{
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        height: 100px;
+        background-color: transparent;
       }
     </style>
   </head>
@@ -88,15 +119,18 @@
       <h1 id="paragraf1"></h1>
     <h1 id="paragraf2"></h1>
     </div>
+    <div class="islem">
+      <button class="toplamaIslemi"><b>+</b></button>
+    </div>
     <script>
       function onayla(){
         const x = document.getElementById("butonum");
         x.remove();
-      const sayi1 = document.getElementById("sayi1").value;
+      const sayi1 = Number(document.getElementById("sayi1").value);
         document.getElementById("paragraf1").innerHTML= "İlk sayı: " + sayi1;
         const y = document.getElementById("sayi1");
         y.remove();
-        const sayi2 = document.getElementById("sayi2").value;
+        const sayi2 = Number(document.getElementById("sayi2").value);
         document.getElementById("paragraf2").innerHTML= "İkinci sayı: " + sayi2;
         const z = document.getElementById("sayi2");
         z.remove();
