@@ -6,9 +6,15 @@
       og$eq.xyz
     </title>
     <style>
-      body{
+      .siyahAP{
         background-color: black;
         font-family: arial, sans-serif;
+        color: azure;
+      }
+      .beyazAP{
+      background-color: white;
+        font-family: arial, sans-serif;
+        color: black;
       }
       .sayilar{
         width: 98%;
@@ -39,18 +45,27 @@
         width: 20%;
         margin-left: 40%;
       }
+      .degistirici{
+        text-align: center;
+        background-color: black;
+        border: 2px solid azure;
+        border-radius: 3px;
+        color: azure;
+        width: 100%;
+      }
     </style>
   </head>
-  <body>
+  <body class="siyahAP">
   <div class="divim">
     <input type="number" class="sayilar" id="sayi1" placeholder="ilk sayı?">
     <button onclick="onayla()" id="butonum" class="butonum"><b>Onayla✓</b></button> <br>
     <input type="number" class="sayilar" id="sayi2" placeholder="ikinci sayı?">
     <button onclick="onaylamak()" id="butonum2" class="butonum"><b>Onayla✓</b>b></b></button> 
+    <button onclick="degistir()" class="degistirici">Arka plan rengini değiştir?</button>
   </div>
     <div class="divim2">
-      <h1 id="paragraf1" style="color: azure; text-align: center;"></h1>
-    <h1 id="paragraf2" style="color: azure; text-align: center;"></h1>
+      <h1 id="paragraf1"></h1>
+    <h1 id="paragraf2"></h1>
     </div>
     <script>
       function onayla(){
@@ -64,6 +79,14 @@
         y.remove();
       const sayi2 = document.getElementById("sayi2").value;
         document.getElementById("paragraf2").innerHTML= "İkinci sayı: " + sayi2;
+      }
+      function degistir(){
+        const arkaPlan = document.body;
+        if(arkaPlan.classList.contains("siyahAP")){
+          arkaPlan.classList.replace("siyahAP" , "beyazAP");
+        }else{
+          arkaPlan.classList.replace("beyazAP" , "siyahAP");
+        };
       }
     </script>
   </body>
