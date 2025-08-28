@@ -98,7 +98,7 @@
         width: 23%;
         height: 100px;
         font-size: 80px;
-        border: 1px solid azure;
+        border: 3px solid azure;
         border-radius: 8px;
         background-color: black;
         color: azure;
@@ -125,6 +125,7 @@
     <div class="divim2">
       <h1 id="paragraf1"></h1>
     <h1 id="paragraf2"></h1>
+      <h1 id="sonucP"></h1>
     </div>
     <div class="islem">
       <button onclick="toplama()" class="toplamaIslemi">+</button>
@@ -153,6 +154,11 @@
           arkaPlan.classList.replace("beyazAP" , "siyahAP");
         };
       }
+      function toplama(){
+        let sonuc = sayi1 + sayi2;
+        document.getElementById("sonucP").innerHTML= "İşlem sonucu: " + sonuc;
+      }
+      
     </script>
   </body>
 </html>
