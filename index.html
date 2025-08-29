@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>
-      og$eq.xyz
+      ogjeq.xyz
     </title>
     <style>
       .siyahAP{
@@ -19,6 +19,11 @@
       .sayilar{
         width: 98%;
         padding: 10px;
+        display: block;
+      }
+      .sayilarGizli
+      {
+        display: none;
       }
       .divim{
         background-color: transparent;
@@ -136,15 +141,15 @@
     <script>
       function onayla(){
         const x = document.getElementById("butonum");
-        x.remove();
+        x.remove()
       const sayi1 = Number(document.getElementById("sayi1").value);
         document.getElementById("paragraf1").innerHTML= "İlk sayı: " + sayi1;
         const y = document.getElementById("sayi1");
-        y.remove();
+        y.classList.replace("sayilar" , "sayilarGizli")
         const sayi2 = Number(document.getElementById("sayi2").value);
         document.getElementById("paragraf2").innerHTML= "İkinci sayı: " + sayi2;
         const z = document.getElementById("sayi2");
-        z.remove();
+        z.classList.replace("sayilar" , "sayilarGizli")
       }
       function degistir(){
         const arkaPlan = document.body;
