@@ -68,7 +68,7 @@
         line-height: 50px;
         padding: 0;
       }
-      .toplamaIslemi2{
+      .toplamaIslemi2, carpmaIslemi2, bolmeIslemi2, cikarmaIslemi2{
         width: 23%;
         height: 100px;
         font-size: 80px;
@@ -170,7 +170,24 @@
         toplayici.classList.replace("toplamaIslemi" , "toplamaIslemi2");
         document.getElementById("sonucP").innerHTML= "İşlemin sonucu: " + sonuc;
       }
-      
+      function cikarma(){
+        let sonuc = sayi1 + sayi2;
+        const cikarici = document.getElementById("cikarici");
+        cikarici.classList.replace("cikarmaIslemi" , "cikarmaIslemi2");
+        document.getElementById("sonucP").innerHTML="İşlemin sonucu: " + sonuc;
+      }
+      function carpma(){
+        let sonuc = sayi1 * sayi2;
+        const carpici = document.getElementById("carpici");
+        carpici.classList.replace("carpmaIslemi" , "carpmaIslemi2");
+        document.getElementById("sonucP").innerHTML= "İşlemin sonucu: " + sonuc;
+      }
+      function bolme(){
+        let sonuc = sayi1 / sayi2;
+        const bolucu = document.getElementById("bolucu");
+        bolucu.classList.replace("bolmeIslemi" , "bolmeIslemi2");
+        document.getElementById("sonucP").innerHTML="İşlemin sonucu: " + sonuc;
+      }
     </script>
   </body>
 </html>
