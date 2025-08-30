@@ -128,6 +128,22 @@
         height: 100px;
         background-color: transparent;
       }
+      .hrefim{
+        text-align: center;
+        height: 30px; 
+        width: 100px;
+        line-height: 20px;
+        padding: 10px;
+        background-color: rgb(30, 250, 30);
+        display: block;
+        border: 1px solid rgb(0, 250, 0);
+        border-radius: 3px;
+        color: white; 
+        font-size: 20px;
+      }
+      .hrefim1{
+        display: none;
+      }
     </style>
   </head>
   <body class="siyahAP">
@@ -135,7 +151,8 @@
   <div class="divim">
     <input type="number" class="sayilar" id="sayi1" placeholder="ilk sayı?">
     <input type="number" class="sayilar" id="sayi2" placeholder="ikinci sayı?">
-    <button onclick="onayla()" id="butonum" class="butonum"><b>İkisini de onayla✓</b></button>  
+    <button onclick="onayla()" id="butonum" class="butonum"><b>İkisini de onayla✓</b></button>
+    <a href="https://isegzidrafok.github.io/Ogjeq.xyz/" class="hrefim1" id="hrefim">Yeni işlem yapmak için tıklayınız...</a>
     <button onclick="degistir()" class="degistirici">Arka plan rengini değiştir?</button>
   </div>
     <div class="divim2">
@@ -154,6 +171,8 @@
       function onayla(){
         const x = document.getElementById("butonum");
         x.remove()
+        const hrefim = document.getElementById("hrefim");
+        hrefim.classList.replace("hrefim1" , "hrefim");
       sayi1 = Number(document.getElementById("sayi1").value);
         document.getElementById("paragraf1").innerHTML= "İlk sayı: " + sayi1;
   sayi2 = Number(document.getElementById("sayi2").value);
