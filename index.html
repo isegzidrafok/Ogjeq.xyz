@@ -72,6 +72,18 @@
         line-height: 50px;
         padding: 0;
       }
+      .toplamaIslemi2{
+        width: 23%;
+        height: 100px;
+        font-size: 80px;
+        border: 3px solid azure;
+        border-radius: 8px;
+        background-color: red;
+        color: azure; 
+        display: inline-block;
+        line-height: 50px;
+        padding: 0;
+      }
       .cikarmaIslemi{
         margin-left: 1%;
         width: 23%;
@@ -133,7 +145,7 @@
       <h1 id="sonucP"></h1>
     </div>
     <div class="islem">
-      <button onclick="toplama()" class="toplamaIslemi">+</button>
+      <button onclick="toplama()" id="toplayici" class="toplamaIslemi">+</button>
       <button onclick="cikarma()" class="cikarmaIslemi">-</button>
       <button onclick="carpma()" class="carpmaIslemi">×</button>
       <button onclick="bolme()" class="bolmeIslemi">÷</button>
@@ -144,12 +156,8 @@
         x.remove()
       const sayi1 = Number(document.getElementById("sayi1").value);
         document.getElementById("paragraf1").innerHTML= "İlk sayı: " + sayi1;
-        const y = document.getElementById("sayi1");
-        y.classList.replace("sayilar" , "sayilarGizli")
         const sayi2 = Number(document.getElementById("sayi2").value);
         document.getElementById("paragraf2").innerHTML= "İkinci sayı: " + sayi2;
-        const z = document.getElementById("sayi2");
-        z.classList.replace("sayilar" , "sayilarGizli")
       }
       function degistir(){
         const arkaPlan = document.body;
@@ -161,7 +169,9 @@
       }
       function toplama(){
         let sonuc = sayi1 + sayi2;
-        document.getElementById("sonucP").innerHTML= "İşlem sonucu: " + sonuc;
+        const toplayici = document.getElementById("toplayici");
+        toplayici.classList.replace("toplamaIslemi" , "toplamaIslemi2");
+        document.getElementById("sonucP").innerHTML= "İşlemin sonucu: " + sonuc;
       }
       
     </script>
