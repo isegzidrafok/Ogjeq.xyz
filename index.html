@@ -21,10 +21,6 @@
         padding: 10px;
         display: block;
       }
-      .sayilarGizli
-      {
-        display: none;
-      }
       .divim{
         background-color: transparent;
         position: fixed;
@@ -146,17 +142,18 @@
     </div>
     <div class="islem">
       <button onclick="toplama()" id="toplayici" class="toplamaIslemi">+</button>
-      <button onclick="cikarma()" class="cikarmaIslemi">-</button>
-      <button onclick="carpma()" class="carpmaIslemi">×</button>
-      <button onclick="bolme()" class="bolmeIslemi">÷</button>
+      <button onclick="cikarma()" id="cikarici" class="cikarmaIslemi">-</button>
+      <button onclick="carpma()" id="carpici" class="carpmaIslemi">×</button>
+      <button onclick="bolme()" id="bolucu" class="bolmeIslemi">÷</button>
     </div>
     <script>
+      let sayi1, sayi2;
       function onayla(){
         const x = document.getElementById("butonum");
         x.remove()
-      const sayi1 = Number(document.getElementById("sayi1").value);
+      sayi1 = Number(document.getElementById("sayi1").value);
         document.getElementById("paragraf1").innerHTML= "İlk sayı: " + sayi1;
-        const sayi2 = Number(document.getElementById("sayi2").value);
+  sayi2 = Number(document.getElementById("sayi2").value);
         document.getElementById("paragraf2").innerHTML= "İkinci sayı: " + sayi2;
       }
       function degistir(){
