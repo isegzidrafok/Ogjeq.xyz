@@ -79,6 +79,7 @@
         display: inline-block;
         line-height: 50px;
         padding: 0;
+        margin-left: 1%;
       }
       .cikarmaIslemi{
         margin-left: 1%;
@@ -129,7 +130,7 @@
     </style>
   </head>
   <body class="siyahAP">
-    <h2 style="margin-bottom: 130; text-align: center;">Onayladıktan sonra basınız!</h2>
+    <h2 style="margin-bottom: 130px; text-align: center;">Onayladıktan sonra basınız!</h2>
   <div class="divim">
     <input type="number" class="sayilar" id="sayi1" placeholder="ilk sayı?">
     <input type="number" class="sayilar" id="sayi2" placeholder="ikinci sayı?">
@@ -172,7 +173,7 @@
         document.getElementById("sonucP").innerHTML= "İşlemin sonucu: " + sonuc;
       }
       function cikarma(){
-        let sonuc = sayi1 + sayi2;
+        let sonuc = sayi1 - sayi2;
         const cikarici = document.getElementById("cikarici");
         cikarici.classList.replace("cikarmaIslemi" , "cikarmaIslemi2");
         document.getElementById("sonucP").innerHTML="İşlemin sonucu: " + sonuc;
