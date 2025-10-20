@@ -1,225 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="tr">
+<head>
     <meta charset="UTF-8">
-    <title>
-      ogjeq.xyz
-    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Embed Örneği</title>
     <style>
-      .siyahAP{
-        background-color: black;
-        font-family: arial, sans-serif;
-        color: azure;
-      }
-      .beyazAP{
-      background-color: white;
-        font-family: arial, sans-serif;
-        color: black;
-      }
-      .sayilar{
-        width: 98%;
-        padding: 10px;
-        display: block;
-        background-color: rgb(30, 10, 70);
-        color: azure;
-        height: 30px;
-        border: 3px solid white; 
-        border-radius: 8px;
-        margin-bottom: 10px;
-      }
-      .divim{
-        background-color: transparent;
-        position: fixed;
-        left: 1%;
-        top: 1%;
-        width: 100%;
-        height: 300px;
-      }
-      .divim2{
-        background-color: transparent;
-        width: 100%;
-        height: 150px;
-        position: fixed;
-        left: 1%;
-        top: 45%;
-      }
-      .butonum{
-        text-align: center;
-        background-color: black;
-        border: 2px solid azure;
-        border-radius: 3px;
-        color: azure;
-        width: 20%;
-        margin-left: 40%;
-        margin-top: 10px;
-      }
-      .degistirici{
-        text-align: center;
-        background-color: black;
-        border: 2px solid azure;
-        border-radius: 3px;
-        color: azure;
-        width: 100%;
-        margin-top: 10px;
-      }
-      .toplamaIslemi{
-        margin-left: 1%;
-        width: 23%;
-        height: 100px;
-        font-size: 80px;
-        border: 3px solid azure;
-        border-radius: 8px;
-        background-color: black;
-        color: azure; 
-        display: inline-block;
-        line-height: 50px;
-        padding: 0;
-      }
-      .toplamaIslemi2, .carpmaIslemi2, .bolmeIslemi2, .cikarmaIslemi2{
-        width: 23%;
-        height: 100px;
-        font-size: 80px;
-        border: 3px solid azure;
-        border-radius: 8px;
-        background-color: red;
-        color: azure; 
-        display: inline-block;
-        line-height: 50px;
-        padding: 0;
-        margin-left: 1%;
-      }
-      .cikarmaIslemi{
-        margin-left: 1%;
-        width: 23%;
-        height: 100px;
-        font-size: 80px;
-        border: 3px solid azure;
-        border-radius: 8px;
-        background-color: black;
-        color: azure; 
-        display: inline-block;
-        line-height: 50px;
-        padding: 0;
-      }
-      .bolmeIslemi{
-        margin-left: 1%;
-        width: 23%;
-        height: 100px;
-        font-size: 80px;
-        border: 3px solid azure;
-        border-radius: 8px;
-        background-color: black;
-        color: azure;
-        display: inline-block;
-        line-height: 50px;
-        padding: 0;
-      }
-      .carpmaIslemi{
-        margin-left: 1%;
-        width: 23%;
-        height: 100px;
-        font-size: 80px;
-        border: 3px solid azure;
-        border-radius: 8px;
-        background-color: black;
-        color: azure;
-        display: inline-block;
-        line-height: 50px;
-        padding: 0;
-      }
-      .islem{
-        position: fixed;
-        bottom: 10px;
-        width: 100%;
-        height: 100px;
-        background-color: transparent;
-      }
-      .hrefim{
-        text-align: center;
-        margin-left: 30%;
-        margin-top: 10px;
-        height: 30px; 
-        width: 40%;
-        line-height: 20px;
-        padding: 10px;
-        background-color: rgb(30, 250, 30);
-        display: block;
-        border: 1px solid rgb(0, 250, 0);
-        border-radius: 8px;
-        color: black; 
-        font-size: 20px;
-        text-decoration: none;
-      }
-      .hrefim1{
-        display: none;
-      }
+        /* Videoyu ekran boyutuna göre ayarlamak için */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 oranı */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
-  </head>
-  <body class="siyahAP">
-    <h2 style="margin-top: 1525px; text-align: center;">Onayladıktan sonra basınız!</h2>
-  <div class="divim">
-    <input type="number" class="sayilar" id="sayi1" placeholder="ilk sayı?">
-    <input type="number" class="sayilar" id="sayi2" placeholder="ikinci sayı?">
-    <button onclick="onayla()" id="butonum" class="butonum"><b>İkisini de onayla✓</b></button>
-    <a href="https://isegzidrafok.github.io/Ogjeq.xyz/" class="hrefim1" id="hrefim">Yeni işlem yapmak için tıklayınız...</a>
-    <button onclick="degistir()" class="degistirici">Arka plan rengini değiştir?</button>
-  </div>
-    <div class="divim2">
-      <h1 id="paragraf1"></h1>
-    <h1 id="paragraf2"></h1>
-      <h1 id="sonucP"></h1>
-    </div>
-    <div class="islem">
-      <button onclick="toplama()" id="toplayici" class="toplamaIslemi">+</button>
-      <button onclick="cikarma()" id="cikarici" class="cikarmaIslemi">-</button>
-      <button onclick="carpma()" id="carpici" class="carpmaIslemi">×</button>
-      <button onclick="bolme()" id="bolucu" class="bolmeIslemi">÷</button>
-    </div>
-    <script>
-      let sayi1, sayi2;
-      function onayla(){
-        const x = document.getElementById("butonum");
-        x.remove()
-        const hrefim = document.getElementById("hrefim");
-        hrefim.classList.replace("hrefim1" , "hrefim");
-      sayi1 = Number(document.getElementById("sayi1").value);
-        document.getElementById("paragraf1").innerHTML= "İlk sayı: " + sayi1;
-  sayi2 = Number(document.getElementById("sayi2").value);
-        document.getElementById("paragraf2").innerHTML= "İkinci sayı: " + sayi2;
-      }
-      function degistir(){
-        const arkaPlan = document.body;
-        if(arkaPlan.classList.contains("siyahAP")){
-          arkaPlan.classList.replace("siyahAP" , "beyazAP");
-        }else{
-          arkaPlan.classList.replace("beyazAP" , "siyahAP");
-        };
-      }
-      function toplama(){
-        let sonuc = sayi1 + sayi2;
-        const toplayici = document.getElementById("toplayici");
-        toplayici.classList.replace("toplamaIslemi" , "toplamaIslemi2");
-        document.getElementById("sonucP").innerHTML= "İşlemin sonucu: " + sonuc;
-      }
-      function cikarma(){
-        let sonuc = sayi1 - sayi2;
-        const cikarici = document.getElementById("cikarici");
-        cikarici.classList.replace("cikarmaIslemi" , "cikarmaIslemi2");
-        document.getElementById("sonucP").innerHTML="İşlemin sonucu: " + sonuc;
-      }
-      function carpma(){
-        let sonuc = sayi1 * sayi2;
-        const carpici = document.getElementById("carpici");
-        carpici.classList.replace("carpmaIslemi" , "carpmaIslemi2");
-        document.getElementById("sonucP").innerHTML= "İşlemin sonucu: " + sonuc;
-      }
-      function bolme(){
-        let sonuc = sayi1 / sayi2;
-        const bolucu = document.getElementById("bolucu");
-        bolucu.classList.replace("bolmeIslemi" , "bolmeIslemi2");
-        document.getElementById("sonucP").innerHTML="İşlemin sonucu: " + sonuc;
-      }
-    </script>
-  </body>
-</html>
+</head>
+<body>
 
+<h2>Video Embed Örneği</h2>
+
+<div class="video-container">
+    <iframe 
+        src="https://www.youtube.com/embed/pFptt7Cargc" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+</div>
+
+</body>
+</html>
