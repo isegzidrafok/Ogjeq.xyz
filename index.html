@@ -5,37 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Embed Örneği</title>
     <style>
-        /* Videoyu ekran boyutuna göre ayarlamak için */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 oranı */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
+        :root{--baskin: black; --cekinik:white;}
+        body{
+            background-color:var(--baskin);
+             font-family: arial, sans-serif;
+             font-size: 10px;
+             color: var(--cekinik);
+            }
+        .lih {
+            padding-bottom: 56.25%;
+            width: 90%;
+            height: 40%;
         }
-        .video-container iframe {
+        .lih iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+        } button{
+            border: 1px solid var(--cekinik);
+            border-radius: 8px;
+            text-align: center;
+            margin-left: 40%;
+            padding: 10px;
+            width: 20%;
         }
     </style>
 </head>
 <body>
-
-<h2>Video Embed Örneği</h2>
-
-<div class="video-container">
+<h3>Let It Happen</h3>
+<div class="lih">
     <iframe 
         src="https://www.youtube.com/embed/pFptt7Cargc" 
         title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
     </iframe>
 </div>
-
+    <button id="arkaPlan">Arka Plan rengini değiştir</button>
+    <script> const root = document.documentElement;
+        if(localStorage.getItem("tema")==="beyaz"){
+root.style.setProperty("--baskin","white");
+root.style.setProperty('--cekinik','black');};
+document.getElementById("arkaPlan").addEventListener("click",function(){
+    if(getComputedStyle(root).getPropertyValue("--baskin")==="white"){
+root.style.setProperty("--baskin","black");
+root.style.setProperty('--cekinik','white');
+    localStorage.setItem("tema","0");}else{
+root.style.setProperty("--baskin","white");
+root.style.setProperty('--cekinik','black');
+    localStorage.setItem("tema","beyaz");};})
+    </script>
 </body>
 </html>
