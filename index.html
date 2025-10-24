@@ -18,7 +18,7 @@
             left: 0;
             width: 90%;
             height: 40%;
-            border: 3px solid var(--cekinik);
+            border: 1px solid var(--cekinik);
             margin-left: 5%;
         }
         .lih iframe {
@@ -37,7 +37,8 @@
             background-color: var(--baskin);
             color: var(--cekinik);
             margin-top: 80%;
-        } #id11, #input11{
+            margin-bottom: 10px;
+        } #id11, #input11, #rehber{
             border: 1px solid var(--cekinik);
             border-radius: 8px;
             text-align: center;
@@ -49,6 +50,8 @@
             width: 30%;
         } #input11:focus{
             background-color: rgb(125, 125, 125);
+            border-color: var(--baskin);
+            max-width: 40%;
         } #input::placeholder{
             color: rgb(150, 150, 150);
             font-weigth: bold; 
@@ -59,7 +62,7 @@
 <h3>Let It Happen</h3>
 <div class="lih">
     <iframe 
-        src="https://www.youtube.com/embed/pFptt7Cargc?autoplay=1?start=160" 
+        src="https://www.youtube.com/embed/pFptt7Cargc" 
         title="Let It Happen"
         frameborder="0"
         allow="picture-in-picture; fullscreen">
@@ -69,7 +72,11 @@
     <span style="font-size: 15px; display: inline-block;">https://www.youtube.com/watch?v=</span>
     <input placeholder="Devamını giriniz" id="input11">
     <button id="id11">göster</button>
+    <button id="rehber">Nasıl kullanılır?</button>
     <script> const root = document.documentElement;
+        const rehber = document.getElementById("rehber");
+        rehber.style.display="inline-block";
+        rehber.addEventListener("click",function(){})
         if(localStorage.getItem("tema")==="beyaz"){
 root.style.setProperty("--baskin","white");
 root.style.setProperty('--cekinik','black');};
@@ -82,12 +89,9 @@ root.style.setProperty("--baskin","white");
 root.style.setProperty('--cekinik','black');
     localStorage.setItem("tema","beyaz");};})
         document.getElementById("id11").addEventListener(
-            "click", function(){try{
+            "click", function(){
                 document.querySelector("iframe").src = "https://www.youtube.com/embed/" +
-                    document.querySelector("input").value;}
-                            catch(e){
-                                alert(e);
-                            }
+                    document.querySelector("input").value;
             }
         );
     </script>
