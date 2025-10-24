@@ -37,6 +37,21 @@
             background-color: var(--baskin);
             color: var(--cekinik);
             margin-top: 80%;
+        } #id11, #input11{
+            border: 1px solid var(--cekinik);
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px;
+            padding: 5px;
+            color: var(--cekinik);
+            background-color: var(--baskin);
+            display: inline-block;
+            width: 30%;
+        } #input11:focus{
+            background-color: rgb(125, 125, 125);
+        } #input::placeholder{
+            color: rgb(150, 150, 150);
+            font-weigth: bold; 
         }
     </style>
 </head>
@@ -51,7 +66,7 @@
     </iframe>
 </div>
     <button id="arkaPlan">Arka Plan rengini değiştir</button>
-    <span style="font-size: 15px;">https://www.youtube.com/watch?v=</span>
+    <span style="font-size: 15px; display: inline-block;">https://www.youtube.com/watch?v=</span>
     <input placeholder="Devamını giriniz">
     <button id="id11">göster</button>
     <script> const root = document.documentElement;
