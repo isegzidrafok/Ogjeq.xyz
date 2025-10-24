@@ -13,6 +13,9 @@
              color: var(--cekinik);
             }
         .lih {
+            position: absolute;
+            top: 100px;
+            left: 0;
             width: 90%;
             height: 40%;
             border: 1px solid var(--cekinik);
@@ -37,16 +40,17 @@
     </style>
 </head>
 <body>
-<h3>Let It Happen</h3><br>
+<h3>Let It Happen</h3>
 <div class="lih">
     <iframe 
         src="https://www.youtube.com/embed/pFptt7Cargc?autoplay=1?start=160" 
         title="Let It Happen"
         frameborder="0"
-        allow="encrypted-media; picture-in-picture; fullscreen">
+        allow="picture-in-picture; fullscreen">
     </iframe>
 </div>
     <button id="arkaPlan">Arka Plan rengini değiştir</button>
+    <iframe src="https://isegzidrafok.github.io/Deneyk-r/" width="100%" heigth="200px" frameborder="0"></iframe>
     <script> const root = document.documentElement;
         if(localStorage.getItem("tema")==="beyaz"){
 root.style.setProperty("--baskin","white");
