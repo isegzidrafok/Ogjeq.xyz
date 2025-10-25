@@ -38,7 +38,7 @@
             color: var(--cekinik);
             margin-top: 80%;
             margin-bottom: 10px;
-        } #id11, #input11, #rehber{
+        } #id11, #rehber{
             border: 1px solid var(--cekinik);
             border-radius: 8px;
             text-align: center;
@@ -50,11 +50,23 @@
             width: 30%;
         } #input11:focus{
             background-color: rgb(125, 125, 125);
-            border-color: var(--baskin);
-            max-width: 40%;
+            border: 1px solid var(--baskin);
         } #input::placeholder{
             color: rgb(150, 150, 150);
-            font-weigth: bold; 
+            font-size: 20px;
+        } #input{
+            color: var(--cekinik);
+            border: 1px solid var(--cekinik);
+            max-width: 50%;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            display: block;
+            margin: 10px;
+            animation: arkaplan 5s linear infinite alternate;
+        } @keyframes arkaplan{
+            0%{border-color: var(--cekinik); background-color: var(--baskin); color: var(--cekinik);}
+            100%{border-color: var(--baskin); background-color: var(--cekinik); color: var(--baskin);}
         }
     </style>
 </head>
@@ -76,7 +88,15 @@
     <script> const root = document.documentElement;
         const rehber = document.getElementById("rehber");
         rehber.style.display="inline-block";
-        rehber.addEventListener("click",function(){})
+        rehber.addEventListener("click",function(){
+            try{
+                document.body.style.display="none";
+                document.appendChild(document.createElement("p").innerHTML=
+            "Elinizdeki bağlantının https://www.youtube.com veya buna benzeyen kısmını çıkartın. "+
+"Daha sonra watch?v= kısmını çıkartın. Yoksa sadece ?v= kısmını çıkartın. Geriye uzun bir video ID'si kalacaktır "+
+"Bu kadar! Elinizde kalan şeyi girin ve göster tuşuna tıklayın ve bekleyin, hemen yüklenmeyebilir.";)
+            }catch(e){alert(e);}
+        });
         if(localStorage.getItem("tema")==="beyaz"){
 root.style.setProperty("--baskin","white");
 root.style.setProperty('--cekinik','black');};
