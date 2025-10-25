@@ -87,7 +87,7 @@
     <button id="id11">Göster</button>
     <button id="rehber">Nasıl kullanılır?</button>
     <script> 
-        const iD = document.getElementById("input11").value;
+        let iD = document.getElementById("input11").value;
         const root = document.documentElement;
         const rehber = document.getElementById("rehber");
         rehber.style.display="inline-block";
@@ -118,7 +118,7 @@ root.style.setProperty('--cekinik','black');
                     iD;
                 localStorage.setItem("url", iD);
             }
-        ); if(localStorage.getItem('url')){
+        ); if(localStorage.getItem('url')!=null){
         document.querySelector("input").value=localStorage.getItem("url");
         }
     </script>
