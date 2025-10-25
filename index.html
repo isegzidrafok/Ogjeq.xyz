@@ -92,11 +92,12 @@
         rehber.style.display="inline-block";
         rehber.addEventListener("click",function(){
             try{
-                document.querySelector("body *").style.display="none";
-                document.body.appendChild(document.createElement("p").innerHTML=
+                document.querySelectorAll("body *").forEach(el => el.style.display="none";);
+                const p = document.createElement("p");
+                p.innerHTML=
             "Elinizdeki bağlantının https://www.youtube.com veya buna benzeyen kısmını çıkartın. "+
 "Daha sonra watch?v= kısmını çıkartın. Yoksa sadece ?v= kısmını çıkartın. Geriye uzun bir video ID'si kalacaktır "+
-"Bu kadar! Elinizde kalan şeyi girin ve göster tuşuna tıklayın ve bekleyin, hemen yüklenmeyebilir.";)
+"Bu kadar! Elinizde kalan şeyi girin ve göster tuşuna tıklayın ve bekleyin, hemen yüklenmeyebilir.";
             }catch(e){alert(e);}
         });
         if(localStorage.getItem("tema")==="beyaz"){
