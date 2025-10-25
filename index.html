@@ -53,20 +53,22 @@
             border: 1px solid var(--baskin);
         } #input11::placeholder{
             color: rgb(150, 150, 150);
-            font-size: 20px;
+            font-size: 10px;
         } #input11{
             color: var(--cekinik);
             border: 1px solid var(--cekinik);
             max-width: 50%;
+            min-width: 25%;
             border-radius: 8px;
             padding: 10px;
             text-align: center;
             display: block;
             margin: 10px;
-            animation: arkaplan 5s linear infinite alternate;
-        } @keyframes arkaplan{
-            0%{border-color: var(--cekinik); background-color: var(--baskin); color: var(--cekinik);}
-            100%{border-color: var(--baskin); background-color: var(--cekinik); color: var(--baskin);}
+            background-color: var(--baskin);
+            caret-color: var(--cekinik);
+        } p{
+            font-size: 10px;
+            display: block;
         }
     </style>
 </head>
@@ -90,8 +92,8 @@
         rehber.style.display="inline-block";
         rehber.addEventListener("click",function(){
             try{
-                document.body.style.display="none";
-                document.appendChild(document.createElement("p").innerHTML=
+                document.querySelector("body *").style.display="none";
+                document.body.appendChild(document.createElement("p").innerHTML=
             "Elinizdeki bağlantının https://www.youtube.com veya buna benzeyen kısmını çıkartın. "+
 "Daha sonra watch?v= kısmını çıkartın. Yoksa sadece ?v= kısmını çıkartın. Geriye uzun bir video ID'si kalacaktır "+
 "Bu kadar! Elinizde kalan şeyi girin ve göster tuşuna tıklayın ve bekleyin, hemen yüklenmeyebilir.";)
