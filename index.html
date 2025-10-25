@@ -57,10 +57,10 @@
         } #input11{
             color: var(--cekinik);
             border: 1px solid var(--cekinik);
-            max-width: 50%;
-            min-width: 25%;
+            width: 75%;
+            max-width: 300px;
             border-radius: 8px;
-            padding: 10px;
+            padding: 5px;
             text-align: center;
             display: block;
             margin: 10px;
@@ -76,16 +76,15 @@
 <h3>Let It Happen</h3>
 <div class="lih">
     <iframe 
-        src="https://www.youtube.com/embed/pFptt7Cargc" 
-        title="Let It Happen"
+        src="https://www.youtube.com/embed/pFptt7Cargc"
         frameborder="0"
         allow="picture-in-picture; fullscreen">
     </iframe>
 </div>
-    <button id="arkaPlan">Arka Plan rengini değiştir</button>
+    <button id="arkaPlan">Arka plan rengini değiştir</button>
     <span style="font-size: 15px; display: inline-block;">https://www.youtube.com/watch?v=</span>
-    <input placeholder="Devamını giriniz" id="input11">
-    <button id="id11">göster</button>
+    <input value="pFptt7Cargc" placeholder="Devamını giriniz" id="input11">
+    <button id="id11">Göster</button>
     <button id="rehber">Nasıl kullanılır?</button>
     <script> const root = document.documentElement;
         const rehber = document.getElementById("rehber");
@@ -95,8 +94,10 @@
                 const p = document.createElement("p");
                 p.innerHTML=
             "Elinizdeki bağlantının https://www.youtube.com veya buna benzeyen kısmını çıkartın. "+
-"Daha sonra watch?v= kısmını çıkartın. Yoksa sadece ?v= kısmını çıkartın. Geriye uzun bir video ID'si kalacaktır "+
-"Bu kadar! Elinizde kalan şeyi girin ve göster tuşuna tıklayın ve bekleyin, hemen yüklenmeyebilir.";
+"Daha sonra watch?v= kısmını çıkartın. Yoksa sadece ?v= kısmını çıkartın, eğer bu da yoksa bir şey yapmayın."
+                    +" Geriye uzun bir video ID'si kalacaktır. "+
+"Bu kadar! Elinizde kalan şeyi girin ve göster tuşuna tıklayıp bekleyin, hemen yüklenmeyebilir. "+
+"Ayrıca ?si= veya &si= olarak gözüken yeri ve kendisinden sonra gelen uzun şeyleri silebilirsiniz";
         document.body.appendChild(p);});
         if(localStorage.getItem("tema")==="beyaz"){
 root.style.setProperty("--baskin","white");
