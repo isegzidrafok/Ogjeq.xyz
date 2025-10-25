@@ -87,7 +87,7 @@
     <button id="id11">Göster</button>
     <button id="rehber">Nasıl kullanılır?</button>
     <script> 
-        let iD = document.getElementById("input11").value;
+        let iD;
         const root = document.documentElement;
         const rehber = document.getElementById("rehber");
         rehber.style.display="inline-block";
@@ -114,6 +114,7 @@ root.style.setProperty('--cekinik','black');
     localStorage.setItem("tema","beyaz");};})
         document.getElementById("id11").addEventListener(
             "click", metod); function metod(){
+            iD = document.getElementById("input11").value;
                 document.querySelector("iframe").src = "https://www.youtube.com/embed/" +
                     iD;
                 localStorage.setItem("url", iD);
