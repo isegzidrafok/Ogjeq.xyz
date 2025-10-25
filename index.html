@@ -91,7 +91,7 @@
         const rehber = document.getElementById("rehber");
         rehber.style.display="inline-block";
         rehber.addEventListener("click",function(){
-                document.querySelectorAll("body *").forEach(el => el.style.display="none";);
+                document.querySelectorAll("body *").forEach(function(el){ el.style.display="none";});
                 const p = document.createElement("p");
                 p.innerHTML=
             "Elinizdeki bağlantının https://www.youtube.com veya buna benzeyen kısmını çıkartın. "+
