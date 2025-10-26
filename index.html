@@ -38,7 +38,7 @@
             color: var(--cekinik);
             margin-top: 80%;
             margin-bottom: 10px;
-        } #id11, #rehber{
+        } #id11, #rehber, .blm{
             border: 1px solid var(--cekinik);
             border-radius: 8px;
             text-align: center;
@@ -48,11 +48,12 @@
             background-color: var(--baskin);
             display: inline-block;
             width: 30%;
+            text-decoration: none;
         } #input11:focus{
             background-color: rgb(125, 125, 125);
             border: 1px solid var(--baskin);
         } #input11::placeholder{
-            color: rgb(150, 150, 150);
+            color: rgb(125, 125, 125);
             font-size: 10px;
         } #input11{
             color: var(--cekinik);
@@ -98,9 +99,15 @@
             "Elinizdeki bağlantının https://www.youtube.com veya buna benzeyen kısmını çıkartın. "+
 "Daha sonra watch?v= kısmını çıkartın. Yoksa sadece ?v= kısmını çıkartın, eğer bu da yoksa bir şey yapmayın."
                     +" Geriye uzun bir video ID'si kalacaktır. "+
-"Bu kadar! Elinizde kalan şeyi girin ve göster tuşuna tıklayıp bekleyin, hemen yüklenmeyebilir. "+
-"Ayrıca ?si= veya &si= olarak gözüken yeri ve kendisinden sonra gelen uzun şeyleri silebilirsiniz";
-        document.body.appendChild(p);});
+"<br>Bu kadar! Elinizde kalan şeyi girin ve göster tuşuna tıklayıp bekleyin, hemen yüklenmeyebilir."+
+"<br>Ayrıca ?si= veya &si= olarak gözüken yeri ve kendisinden sonra gelen uzun şeyleri silebilirsiniz.";
+        document.body.appendChild(p);
+        const a = document.createElement("a");
+            a.textContent = "Geri git";
+            a.href = "https://isegzidrafok.github.io/Ogjeq.xyz/";
+            a.classList.add("blm");
+            document.body.appendChild(a);
+        });
         if(localStorage.getItem("tema")==="beyaz"){
 root.style.setProperty("--baskin","white");
 root.style.setProperty('--cekinik','black');};
