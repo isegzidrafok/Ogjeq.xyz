@@ -74,15 +74,7 @@
             font-size: 10px;
             display: block;
         }
-        #dongu{
-            display: block;
-            margin-top: 10px;
-            width: 20vw;
-            height: 20vw;
-            margin-left: 40vw;
-            border-radius: 8px;
-            background-color: red;
-        }
+        
     </style>
 </head>
 <body>
@@ -99,25 +91,15 @@
     <input value="pFptt7Cargc" placeholder="Devamını giriniz" id="input11">
     <button id="id11">Göster</button>
     <button id="rehber">Nasıl kullanılır?</button>
-    <button id="dongu">Döngü</button>
+    
     <script> 
     
         let iD;
-        let oto = false;
+        
         const root = document.documentElement;
         const rehber = document.getElementById("rehber");
         rehber.style.display="inline-block";
-        const dongu = document.getElementById("dongu");
-        dongu.addEventListener("click",function(){
-            if(oto){
-                oto = false;
-                dongu.style.backgroundColor = "red";
-            }else{
-                oto = true;
-                dongu.style.backgroundColor = "green";
-                alert("Madem öyle, ID'yi doğru girmeye dikkat et");
-            }
-        })
+        
         rehber.addEventListener("click",function(){
                 document.querySelectorAll("body *").forEach(function(el){ el.style.display="none";});
                 const p = document.createElement("p");
@@ -154,13 +136,10 @@ root.style.setProperty('--cekinik','black');
         document.getElementById("id11").addEventListener(
             "click", metod); function metod(){
             iD = document.getElementById("input11").value;
-            if(!oto){
+            
                 document.querySelector("iframe").src = "https://www.youtube.com/embed/" +
                     iD;
-        }else{
-                document.querySelector("iframe").src = "https://www.youtube.com/embed/" +
-        iD + "?playlist=" + iD + "&loop=1&autoplay=1&mute=1";
-        }
+        
                 localStorage.setItem("url", iD);
             }
      if(localStorage.getItem('url')===null){alert('Hoşgeldiniz');
