@@ -101,6 +101,7 @@
     <button id="rehber">Nasıl kullanılır?</button>
     <button id="dongu">Döngü</button>
     <script> 
+        try{
         let iD;
         let oto = false;
         const root = document.documentElement;
@@ -138,7 +139,7 @@
             a.href = "https://isegzidrafok.github.io/Ogjeq.xyz/";
             a.classList.add("blm");
             document.body.appendChild(a);
-        });
+        })
         if(localStorage.getItem("tema")==="beyaz"){
 root.style.setProperty("--baskin","white");
 root.style.setProperty('--cekinik','black');};
@@ -157,7 +158,7 @@ root.style.setProperty('--cekinik','black');
                 document.querySelector("iframe").src = "https://www.youtube.com/embed/" +
                     iD;
         }else{
-                document.querySelector("iframe".src = "https://www.youtube.com)embed/" +
+                document.querySelector("iframe".src = "https://www.youtube.com/embed/" +
         iD + "?playlist=" + iD + "&loop=1&autoplay=1&mute=1";
         }
                 localStorage.setItem("url", iD);
@@ -166,7 +167,8 @@ root.style.setProperty('--cekinik','black');
         }else{
         document.querySelector("input").value=localStorage.getItem("url");
             metod();
-        };
+        }
+            }catch(e){alert(e);}
     </script>
 </body>
 </html>
