@@ -91,7 +91,7 @@
     <iframe 
         src="https://www.youtube.com/embed/pFptt7Cargc"
         frameborder="0"
-        allow="picture-in-picture; fullscreen">
+        allow="picture-in-picture; fullscreen; autoplay">
     </iframe>
 </div>
     <button id="arkaPlan">Arka plan rengini değiştir</button>
@@ -101,7 +101,7 @@
     <button id="rehber">Nasıl kullanılır?</button>
     <button id="dongu">Döngü</button>
     <script> 
-        try{
+    
         let iD;
         let oto = false;
         const root = document.documentElement;
@@ -158,7 +158,7 @@ root.style.setProperty('--cekinik','black');
                 document.querySelector("iframe").src = "https://www.youtube.com/embed/" +
                     iD;
         }else{
-                document.querySelector("iframe".src = "https://www.youtube.com/embed/" +
+                document.querySelector("iframe").src = "https://www.youtube.com/embed/" +
         iD + "?playlist=" + iD + "&loop=1&autoplay=1&mute=1";
         }
                 localStorage.setItem("url", iD);
@@ -168,7 +168,7 @@ root.style.setProperty('--cekinik','black');
         document.querySelector("input").value=localStorage.getItem("url");
             metod();
         }
-            }catch(e){alert(e);}
+            
     </script>
 </body>
 </html>
